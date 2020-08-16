@@ -6,5 +6,10 @@ using namespace std;
 
 int main ()
 {
-    AddressBook addressBook;
+    KsiazkaAdresowa ksiazkaAdresowa;
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+
+    return 0;
 }

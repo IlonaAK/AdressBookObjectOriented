@@ -1,10 +1,29 @@
-#include <iostream>
-#include <vector>
+#include "User.h"
 
-using namespace std;
-
-class User
+void Uzytkownik::ustawId (int noweId)
 {
-    int dd;
-    string name, password;
-};
+    if(noweId >= 0)
+    id=noweId;
+}
+void Uzytkownik::ustawLogin (string nowyLogin)
+{
+    login=nowyLogin;
+}
+void Uzytkownik::ustawHaslo (string noweHaslo)
+{
+    haslo=noweHaslo;
+}
+
+int Uzytkownik::pobierzId()
+{
+    return id;
+}
+string Uzytkownik::pobierzLogin()
+{
+    return login;
+}
+string Uzytkownik::pobierzHaslo()
+{
+    return haslo;
+}
+

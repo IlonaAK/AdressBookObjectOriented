@@ -1,19 +1,27 @@
 #include <iostream>
 #include <vector>
+#include <windows.h>
+
 #include "User.h"
 
 using namespace std;
 
-class AddressBook
+class KsiazkaAdresowa
 {
-    int idOfLoggedUser;
-    int idLastAddresse;
-    int idDeletedAddressee;
+    int idZalogowanegoUzytkownika;
+    int idOstatniegoAdresata;
+    int idUsunietegoAdresata;
 
-    vector <User> users;
+    vector <Uzytkownik> uzytkownicy;
+
+    Uzytkownik podajDaneNowegoUzytkownika();
+    int pobierzIdNowegoUzytkownika();
+    bool czyIstniejeLogin(string login);
 
 public:
-    registerationOfUser();
+    void rejestracjaUzytkownika();
+    void wypiszWszystkichUzytkownikow();
+
 };
 
 
