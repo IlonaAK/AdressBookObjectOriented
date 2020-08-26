@@ -2,3 +2,5 @@
 2|Kamil|Duzy|
 3|Tomek|Pusty|
 4|Lola|COla|
+5|Ananas|1243|
+6|Kalarepa|4444|
