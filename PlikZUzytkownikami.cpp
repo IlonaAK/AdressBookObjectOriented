@@ -1,4 +1,5 @@
 #include "PlikZUzytkownikami.h"
+#include "MetodyPomocnicze.h"
 
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
@@ -10,7 +11,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
 
-        if (czyPlikJestPusty() == true)
+        if (MetodyPomocnicze::czyPlikJestPusty(plikTekstowy) == true)
         {
             plikTekstowy << liniaZDanymiUzytkownika;
         }
@@ -20,18 +21,10 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
     }
     else
-        cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
+        cout << "Nie uda\210o si\251 otworzy\206 pliku " << nazwaPlikuZUzytkownikami << " i zapisa\206 w nim danych." << endl;
     plikTekstowy.close();
 }
-bool PlikZUzytkownikami::czyPlikJestPusty()
-{
-    fstream plikTekstowy;
-    plikTekstowy.seekg(0, ios::end);
-    if (plikTekstowy.tellg() == 0)
-        return true;
-    else
-        return false;
-}
+
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";
@@ -94,3 +87,36 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     }
     return uzytkownik;
 }
+
+void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy)
+{
+    fstream plikTekstowy;
+    string liniaZDanymiUzytkownika = "";
+    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
+
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
+
+    if (plikTekstowy.good() == true)
+    {
+        for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+        {
+            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(*itr);
+
+            if (itr == itrKoniec)
+            {
+               plikTekstowy << liniaZDanymiUzytkownika;
+            }
+            else
+            {
+                plikTekstowy << liniaZDanymiUzytkownika << endl;
+            }
+            liniaZDanymiUzytkownika = "";
+        }
+    }
+    else
+    {
+        cout << "Nie mo\276na otworzy\206 pliku " << nazwaPlikuZUzytkownikami << endl;
+    }
+    plikTekstowy.close();
+}
+
