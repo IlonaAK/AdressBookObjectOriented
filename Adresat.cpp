@@ -1,16 +1,5 @@
 #include "Adresat.h"
 
-Adresat::Adresat (int ID, int IDUZYTKOWNIKA, string IMIE, string NAZWISKO, string NUMERTELEFONU, string EMAIL, string ADRES){
-this-> id=ID;
-this-> idUzytkownika= IDUZYTKOWNIKA;
-this-> imie= IMIE;
-this-> nazwisko= NAZWISKO;
-this-> numerTelefonu= NUMERTELEFONU;
-this-> email= EMAIL;
-this-> adres= ADRES;
-}
-
-Adresat::Adresat(){}
 
 void Adresat::ustawId (int noweId)
 {
@@ -24,11 +13,11 @@ void Adresat::ustawIdUzytkownika(int nowyIdUzytkownika)
 }
 void Adresat::ustawImie(string noweImie)
 {
-    imie=noweImie;
+    imie=MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(noweImie);
 }
 void Adresat::ustawNazwisko(string noweNazwisko)
 {
-    nazwisko=noweNazwisko;
+    nazwisko=MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(noweNazwisko);
 }
 void Adresat::ustawNumerTelefonu (string nowyNumerTelefonu)
 {

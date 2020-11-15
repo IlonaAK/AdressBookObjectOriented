@@ -84,7 +84,7 @@ void KsiazkaAdresowa::wyswietlMenuUzytkownika()
 }
 void KsiazkaAdresowa::menuUzytkownika()
 {
-    adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+    adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     char wybor='0';
     do
     {
@@ -94,29 +94,34 @@ void KsiazkaAdresowa::menuUzytkownika()
         {
         case ('1'):
         {
-            adresatMenedzer->dodawanieAdresata();
+            adresatMenedzer->dodajAdresata();
             break;
+
         }
         case ('2'):
         {
+            adresatMenedzer->wyszukajAdresatowPoImieniu();
             break;
         }
         case ('3'):
         {
+            adresatMenedzer->wyszukajAdresatowPoNazwisku();
             break;
         }
         case ('4'):
         {
-            adresatMenedzer->wyswietlWszystkichAdresatowUzytkownika();
+            adresatMenedzer->wyswietlWszystkichAdresatow();
             system("pause");
             break;
         }
         case ('5'):
         {
+            adresatMenedzer->usunAdresata();
             break;
         }
         case ('6'):
         {
+             adresatMenedzer->edytujAdresata();
             break;
         }
         case ('7'):
