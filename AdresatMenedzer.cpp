@@ -105,7 +105,7 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
     {
         cout << ">>> WYSZUKIWANIE ADRESATOW O NAZWISKU <<<" << endl << endl;
 
-        cout << "Wyszukaj adresat/242w o nazwisku: ";
+        cout << "Wyszukaj adresat\242w o nazwisku: ";
         nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
         nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoPoszukiwanegoAdresata);
 
@@ -129,7 +129,7 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
     cout << endl << "Id:                 " << adresat.pobierzId() << endl;
-    cout << "Imi/251:               " << adresat.pobierzImie() << endl;
+    cout << "Imi\251:               " << adresat.pobierzImie() << endl;
     cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
     cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
     cout << "Email:              " << adresat.pobierzEmail()<< endl;
@@ -173,7 +173,7 @@ void AdresatMenedzer::usunAdresata()
     }
     if (czyIstniejeAdresat == false)
     {
-        cout << endl << "Nie ma takiego adresata w ksi\\245\276ce adresowej" << endl << endl;
+        cout << endl << "Nie ma takiego adresata w ksi\245\276ce adresowej" << endl << endl;
         system("pause");
     }
 }
