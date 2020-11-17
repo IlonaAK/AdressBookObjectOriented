@@ -84,11 +84,11 @@ void KsiazkaAdresowa::wyswietlMenuUzytkownika()
 }
 void KsiazkaAdresowa::menuUzytkownika()
 {
-    adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     char wybor='0';
     do
     {
         wyswietlMenuUzytkownika();
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
         wybor=MetodyPomocnicze::wczytajZnak();
         switch (wybor)
         {
